@@ -180,7 +180,7 @@ class ArmDisassembler(Disassembler):
     """ARM Disassembler.
     """
 
-    def __init__(self, architecture_mode=ARCH_ARM_MODE_THUMB):
+    def __init__(self, architecture_mode=ARCH_ARM_MODE_ARM):
         super(ArmDisassembler, self).__init__()
 
         self._arch_mode = architecture_mode
@@ -193,7 +193,7 @@ class ArmDisassembler(Disassembler):
         # TODO: define default disassembler externally
         self._disassembler = self._avaliable_disassemblers[architecture_mode]
 
-    def disassemble(self, data, address, architecture_mode=ARCH_ARM_MODE_THUMB):
+    def disassemble(self, data, address, architecture_mode=ARCH_ARM_MODE_ARM):
         """Disassemble the data into an instruction.
         """
         self._disassembler = self._avaliable_disassemblers[architecture_mode]
